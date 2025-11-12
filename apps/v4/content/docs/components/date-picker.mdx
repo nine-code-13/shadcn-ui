@@ -94,3 +94,33 @@ This component uses the `chrono-node` library to parse natural language dates.
   title="Natural Language Picker"
   description="A calendar with natural language picker."
 />
+
+### Date Time Range Picker
+
+A date time range picker with separate date and time inputs, supporting presets and custom ranges.
+
+```tsx showLineNumbers title="components/example-date-time-range-picker.tsx"
+"use client"
+
+import * as React from "react"
+import { DateTimeRangePicker } from "@/components/ui/date-time-range-picker"
+
+export function DateTimeRangePickerDemo() {
+  return (
+    <DateTimeRangePicker
+      presets={[
+        { label: "Today", value: { from: new Date(), to: new Date() } },
+        { label: "Yesterday", value: { from: new Date(Date.now() - 86400000), to: new Date(Date.now() - 86400000) } },
+        { label: "Last 7 days", value: { from: new Date(Date.now() - 604800000), to: new Date() } },
+      ]}
+      showTime
+    />
+  )
+}
+```
+
+<ComponentPreview
+  name="calendar-30"
+  title="Date Time Range Picker"
+  description="A date time range picker with separate date and time inputs."
+/>
